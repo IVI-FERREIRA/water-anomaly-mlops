@@ -59,6 +59,7 @@ requirements.txt
 README.md
 ```
 ## 🚀 COMO RODAR LOCALMENTE
+Clone o projeto para sua máquina local com o comando:  git clone https://github.com/IVI-FERREIRA/water-anomaly-mlops.git
 
 ### 1️⃣ Criar ambiente virtual
 python -m venv .venv
