@@ -20,7 +20,7 @@ Detectar **comportamentos anômalos** em dados de sensores de qualidade da água
 ---
 
 ## 🏗️ Arquitetura
-
+```text
 Dataset original (web)
         ↓
 data_prep.py
@@ -34,7 +34,7 @@ Modelo treinado (Isolation Forest)
 FastAPI (/predict)
         ↓
 NORMAL | ANOMALIA
-
+```
 ## 📁 Estrutura do Repositório
 ```text
 data/
