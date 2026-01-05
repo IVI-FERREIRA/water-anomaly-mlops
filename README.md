@@ -37,7 +37,7 @@ NORMAL | ANOMALIA
 
 ## 📁 Estrutura do Repositório
 data/
-├── raw/ # Dados brutos
+├── sample/ # Dados brutos (apenas para teste)
 └── processed/ # Dados tratados
 
 docker/
@@ -63,10 +63,15 @@ python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 
-### 2️⃣ Treinar o modelo
+### 2️⃣ Prepara os dados 
+
+python src/data_prep.py
+
+
+### 3️⃣ Treinar o modelo
 python src/train.py
 
-### 3️⃣ Rodar a API
+### 4️⃣ Rodar a API
 uvicorn src.api.main:app --reload
 
 
