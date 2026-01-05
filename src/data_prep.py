@@ -3,21 +3,24 @@ from pathlib import Path
 
 # caminhos
 RAW_PATH = Path("data/raw/water.csv")
+SAMPLE_PATH = Path("data/sample/water_sample.csv")
 PROCESSED_PATH = Path("data/processed/water.parquet")
-
-URL = (
-    "https://archive.ics.uci.edu/ml/machine-learning-databases/"
-    "water-treatment/water-treatment.data"
-)
 
 
 def load_data():
     if RAW_PATH.exists():
+        print("Usando dados RAW")
         df = pd.read_csv(RAW_PATH)
+
+    elif SAMPLE_PATH.exists():
+        print("Usando dados SAMPLE")
+        df = pd.read_csv(SAMPLE_PATH)
+
     else:
-        df = pd.read_csv(URL, header=None)
-        RAW_PATH.parent.mkdir(parents=True, exist_ok=True)
-        df.to_csv(RAW_PATH, index=False)
+        raise FileNotFoundError(
+            "Nenhum dado encontrado. Forneça data/raw ou data/sample."
+        )
+
     return df
 
 
@@ -41,4 +44,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
