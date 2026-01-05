@@ -19,7 +19,7 @@ def train_model(df):
             ("scaler", StandardScaler()),
             ("model", IsolationForest(
                 n_estimators=100,
-                contamination=0.05,
+                contamination=0.2,
                 random_state=42
             ))
         ]

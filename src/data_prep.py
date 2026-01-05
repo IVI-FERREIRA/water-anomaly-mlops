@@ -6,22 +6,14 @@ RAW_PATH = Path("data/raw/water.csv")
 SAMPLE_PATH = Path("data/sample/water_sample.csv")
 PROCESSED_PATH = Path("data/processed/water.parquet")
 
+URL = "https://archive.ics.uci.edu/ml/machine-learning-databases/water-treatment/water-treatment.data"
+
 
 def load_data():
-    if RAW_PATH.exists():
-        print("Usando dados RAW")
-        df = pd.read_csv(RAW_PATH)
-
-    elif SAMPLE_PATH.exists():
-        print("Usando dados SAMPLE")
-        df = pd.read_csv(SAMPLE_PATH)
-
-    else:
-        raise FileNotFoundError(
-            "Nenhum dado encontrado. Forneça data/raw ou data/sample."
-        )
-
+    print("Baixando dataset COMPLETO da internet")
+    df = pd.read_csv(URL, header=None)
     return df
+
 
 
 def clean_data(df):
@@ -29,6 +21,7 @@ def clean_data(df):
     df = df.apply(pd.to_numeric, errors="coerce")
     df = df.dropna(thresh=int(df.shape[1] * 0.7))
     return df
+
 
 
 def main():
