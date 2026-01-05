@@ -62,10 +62,11 @@ README.md
 Clone o projeto para sua máquina local com o comando:  git clone https://github.com/IVI-FERREIRA/water-anomaly-mlops.git
 
 ### 1️⃣ Criar ambiente virtual
+```text
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
-
+```
 ### 2️⃣ Prepara os dados 
 python src/data_prep.py
 
