@@ -21,52 +21,51 @@ Detectar **comportamentos anômalos** em dados de sensores de qualidade da água
 
 ## 🏗️ Arquitetura
 
-raw data
-   ↓
+Dataset original (web)
+        ↓
 data_prep.py
-   ↓
-processed data
-   ↓
-train.py
-   ↓
-model.joblib
-   ↓
+        ↓
+Dados tratados (Parquet)
+        ↓
+   train.py
+        ↓
+Modelo treinado (Isolation Forest)
+        ↓
 FastAPI (/predict)
-   ↓
+        ↓
 NORMAL | ANOMALIA
 
 ## 📁 Estrutura do Repositório
 data/
-├── sample/ # Dados brutos (apenas para teste)
-└── processed/ # Dados tratados
+├── sample/           # Dataset de exemplo (para testes)
+└── processed/        # Dados tratados (gerados no pipeline)
 
 docker/
-└── Dockerfile
+└── Dockerfile        # Container da aplicação
 
 models/
-└── model.joblib # Modelo treinado (ignorado no Git)
+└── model.joblib      # Modelo treinado (ignorado no Git)
 
 src/
 ├── api/
-│ └── main.py # API FastAPI
-├── data_prep.py # Preparação dos dados
-├── train.py # Treinamento do modelo
-└── infer.py # Inferência local
+│   └── main.py       # API FastAPI
+├── data_prep.py      # Preparação dos dados
+├── train.py          # Treinamento do modelo
+└── infer.py          # Inferência local (opcional)
 
 .gitignore
 requirements.txt
 README.md
 
-## 🚀 Como Rodar Localmente
+## 🚀 COMO RODAR LOCALMENTE
+
 ### 1️⃣ Criar ambiente virtual
 python -m venv .venv
 .venv\Scripts\activate
 pip install -r requirements.txt
 
 ### 2️⃣ Prepara os dados 
-
 python src/data_prep.py
-
 
 ### 3️⃣ Treinar o modelo
 python src/train.py
@@ -76,7 +75,6 @@ uvicorn src.api.main:app --reload
 
 
 Acesse:
-
 http://127.0.0.1:8000/docs
 
 
@@ -104,7 +102,6 @@ docker run -p 8000:8000 water-anomaly-api
 
 
 Acesse:
-
 http://127.0.0.1:8000/docs
 
 ## 📊 Tecnologias Utilizadas
