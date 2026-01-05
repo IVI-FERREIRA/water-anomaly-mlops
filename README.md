@@ -36,6 +36,7 @@ FastAPI (/predict)
 NORMAL | ANOMALIA
 
 ## 📁 Estrutura do Repositório
+```text
 data/
 ├── sample/           # Dataset de exemplo (para testes)
 └── processed/        # Dados tratados (gerados no pipeline)
@@ -56,7 +57,7 @@ src/
 .gitignore
 requirements.txt
 README.md
-
+```
 ## 🚀 COMO RODAR LOCALMENTE
 
 ### 1️⃣ Criar ambiente virtual
