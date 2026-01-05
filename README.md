@@ -97,6 +97,7 @@ ou
 
 
 ## 🐳 Rodar com Docker
+```text
 -Build da imagem
 docker build -t water-anomaly-api -f docker/Dockerfile .
 
@@ -106,7 +107,7 @@ docker run -p 8000:8000 water-anomaly-api
 
 Acesse:
 http://127.0.0.1:8000/docs
-
+```
 ## 📊 Tecnologias Utilizadas
 
 -Python
