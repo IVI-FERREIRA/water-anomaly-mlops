@@ -20,21 +20,9 @@ Detectar **comportamentos anômalos** em dados de sensores de qualidade da água
 ---
 
 ## 🏗️ Arquitetura
-```text
-Dataset original (web)
-        ↓
-data_prep.py
-        ↓
-Dados tratados (Parquet)
-        ↓
-   train.py
-        ↓
-Modelo treinado (Isolation Forest)
-        ↓
-FastAPI (/predict)
-        ↓
-NORMAL | ANOMALIA
-```
+<img width="1723" height="495" alt="image" src="https://github.com/user-attachments/assets/894cb797-3068-4cca-ade5-6bfaf5234d2f" />
+
+
 ## 📁 Estrutura do Repositório
 ```text
 data/
